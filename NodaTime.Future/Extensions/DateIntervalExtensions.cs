@@ -12,19 +12,7 @@ namespace NodaTime.Extensions
             new DateIntervalComparer()
         );
 
-        /// <summary>
-        /// Returns the dates in the <see cref="DateInterval"/> in chronological order.
-        /// </summary>
-        /// <param name="interval">A date interval.</param>
-        /// <returns>All dates in the interval from <paramref name="interval.Start"/> to <paramref name="interval.End"/> (both included) in chronological order.</returns>
-        public static IEnumerable<LocalDate> Dates( this DateInterval interval )
-        {
-            for ( var date = interval.Start; date <= interval.End; date = date.NextDay() )
-            {
-                yield return date;
-            }
-        }
-
+        [System.Obsolete("Ported")]
         /// <summary>
         /// Determines whether the two date intervals overlap, i.e. both intervals contain at least one common date.
         /// </summary>
@@ -45,6 +33,7 @@ namespace NodaTime.Extensions
         [System.Obsolete("Use " + nameof(GetOverlapWith) + " instead. This method will be removed in the next major version.")]
         public static DateInterval Overlap(this DateInterval interval, DateInterval otherInterval) => interval.GetOverlapWith(otherInterval);
 
+        [System.Obsolete("Ported")]
         /// <summary>
         /// Returns the overlap between the two intervals.
         /// </summary>
@@ -107,6 +96,7 @@ namespace NodaTime.Extensions
         /// </remarks>
         public static IEnumerable<DateInterval> CombineOverlappingIntervals(this IEnumerable<DateInterval> source) => IntervalCombiner.CombineOverlappingIntervals(source);
 
+        [System.Obsolete("Ported")]
         /// <summary>
         /// Returns the dates in the period that fall on the given day of week.
         /// </summary>

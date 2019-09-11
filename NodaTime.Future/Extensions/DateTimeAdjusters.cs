@@ -2,6 +2,7 @@ using System;
 
 namespace NodaTime.Extensions
 {
+    [System.Obsolete("Ported")]
     public static class DateTimeAdjusters
     {
         /// <summary>

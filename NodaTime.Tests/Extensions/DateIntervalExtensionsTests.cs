@@ -12,24 +12,7 @@ namespace NodaTime.Tests.Extensions
     public class DateIntervalExtensionsTests
     {
         private static readonly Fixture Fixture = new Fixture().CustomizeForNodaTime();
-
-        [Fact]
-        public void Dates()
-        {
-            // Arrange
-            var dateInterval = Fixture.Create<DateInterval>();
-
-            // Act
-            var dates = dateInterval.Dates().ToList();
-
-            // Assert
-            dates.First().Should().Be( dateInterval.Start );
-            dates.Last().Should().Be( dateInterval.End );
-            dates.Should().BeInAscendingOrder();
-            dates.Distinct().Should().Equal( dates );
-            dates.Count.Should().Be( dateInterval.Length );
-        }
-
+        
         #region Overlaps
 
         [Fact]

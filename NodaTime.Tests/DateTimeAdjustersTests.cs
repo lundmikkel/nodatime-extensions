@@ -4,6 +4,7 @@ using Xunit;
 
 namespace NodaTime.Tests
 {
+    [System.Obsolete("Ported")]
     public class DateTimeAdjustersTests
     {
         #region NextOrSame

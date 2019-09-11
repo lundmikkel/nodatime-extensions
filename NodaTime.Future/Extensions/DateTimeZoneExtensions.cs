@@ -48,6 +48,7 @@ namespace NodaTime.Extensions
         /// <param name="timeZone">The time zone.</param>
         /// <param name="clock">The clock from which the current time is taken.</param>
         /// <returns>Today's date in the given time zone.</returns>
+        [System.Obsolete("Ported")]
         public static LocalDate Today( this DateTimeZone timeZone, IClock clock ) => ( clock ?? SystemClock.Instance ).GetCurrentInstant().InZone( timeZone ).Date;
 
         /// <summary>
@@ -65,6 +66,7 @@ namespace NodaTime.Extensions
         /// <exception cref="SkippedTimeException">The entire day was skipped due to a very large time zone transition.
         /// (This is extremely rare.)</exception>
         /// <returns>The <see cref="ZonedDateTime"/> representing the earliest time in the given date, in this time zone.</returns>
+        [System.Obsolete("Ported")]
         public static ZonedDateTime AtEndOfDay( this DateTimeZone timeZone, LocalDate date ) => timeZone.AtStartOfDay( date.NextDay() );
 
         /// <summary>

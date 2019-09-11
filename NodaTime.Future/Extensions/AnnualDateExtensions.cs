@@ -1,5 +1,6 @@
 ﻿namespace NodaTime.Extensions
 {
+    [System.Obsolete("Ported")]
     public static class AnnualDateExtensions
     {
         /// <summary>
